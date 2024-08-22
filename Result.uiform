@@ -34,6 +34,15 @@
         "input": true
       },
       {
+        "label": "Car with the highest price",
+        "action": "event",
+        "showValidations": false,
+        "tableView": false,
+        "key": "carWithTheHighestPrice",
+        "type": "button",
+        "input": true
+      },
+      {
         "label": "Name of the car with the lowest price",
         "tableView": true,
         "key": "NameMin",
@@ -55,9 +64,18 @@
         "input": true
       },
       {
+        "label": "Car with the lowest price",
+        "action": "event",
+        "showValidations": false,
+        "tableView": false,
+        "key": "carWithTheLowestPrice",
         "type": "button",
-        "label": "Submit",
-        "key": "submit",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Exit",
+        "key": "exit",
         "disableOnInvalid": true,
         "input": true,
         "tableView": false

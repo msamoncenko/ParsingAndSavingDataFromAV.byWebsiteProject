@@ -1,0 +1,140 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CarwiththehighestpriceTrigger" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="TriggerEventArgs" Type="InArgument(ufa:FormInfoTriggerEventArgs)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>866.4,877.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Forms.Activities</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.Forms.Activities.Base</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CarwiththehighestpriceTrigger" sap:VirtualizedContainerService.HintSize="517.6,812.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.carWithTheHighestPrice" FormId="2471d772-554c-4a1c-bb6e-b8eb9d18c6bc" sap:VirtualizedContainerService.HintSize="455.2,194.4" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="aaf26931-49c1-4b9f-aa12-241912cfbe11" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые." sap:VirtualizedContainerService.HintSize="455.2,529.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="57e55b3f-deab-44cd-a8c6-138bf974ecfe" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,289.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CarsHyperlinks - Invoke Workflow File (CarsHyperlinks.xaml)" sap:VirtualizedContainerService.HintSize="353.6,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CarsHyperlinks.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="x:String" x:Key="Name" />
+                <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow" />
+                <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow" />
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable" />
+                <OutArgument x:TypeArguments="x:String" x:Key="Model" />
+                <OutArgument x:TypeArguments="x:Double" x:Key="PriceFrom" />
+                <OutArgument x:TypeArguments="x:Double" x:Key="PriceTo" />
+                <InArgument x:TypeArguments="x:String" x:Key="NameMax" />
+                <InArgument x:TypeArguments="x:String" x:Key="PriceMax" />
+                <InArgument x:TypeArguments="x:String" x:Key="NameMin" />
+                <InArgument x:TypeArguments="x:String" x:Key="PriceMin" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAL6SURBVGhD1ZpPitRAFMZ7KTg2XkDwAC48wqy9gTeYG3iDTutGN+oFZty5ctwJLsadi8F2p0jRuNBhkLQMMooMsb6aFHQ/vqp6lcTp1Ac/aJJ6Ve9L/Us6mTDtVGZ3OvvyZFqZ4+ncGEttaa4YtGluzM1b5LJTfd5t0wvrZmVuuwBe4Rgw12yObbqbuv7I3LUFtnGlc6mRa5v2pXDlcUIUHDP1Rk/YAxjnrOBowVB3ybsJSwqUgJvY07ldbcjJIrCr02Tkq06ch+a4yPG/hoGBQVafW4+Xzd7haXOwOGsWJ3+a1flF44XfOIZzKIOyrI4O1DDATqi58/xr8+z9z42ENYIZxLI6c+hloDqqsxOXQh2sbi2dDODKYUgMJdTVtTeyDaCh5epv2/RwQp1dTGQb+B/Je6Encid4lgFMVo0wL/btJJ3Z8Q1effqlNo42WNsh1AbQvSkhyXsvvtF4sPf6VGUkVodEbQDLXkz7H8/U3Z+q62h5TuMYKgOpq48hwuJiIMmYtBdDZQC7Z0gY711WD8TE9pAHb37QOInKwKG9wiFhsrIYDU8ji4K2V1UGFt/Dm1bOhJMgNiRMdhYjURmIiZXXgnEeE4uRbNUAiImVl/Q20PfWOCZWXqIyENt8es2Bg/AcgFiMRGUgtgrhVoHFaEhtaCxGojKANTmk1e+LTsMI+0DqtoLFSVQGUqsFeojFxYj1qheLk6gMgNTWj+HA4hipoePFYiVqA7FNx8vdjdqJyeIBzuU8ybE6JGoDILb1rwtGcJX98wB+p8Y7E8tBkmUAcyF2WzG0WA6SLANAs3oMJda+JNsAuCoTrG1JJwOe2bu6baqbUv8psTYlvQwA9AaeCXKExGEecyr2nMzak/Q24IERJIMHkQ9ioiNhHINRlGE79/2XJ+7cOrIMAwZKerUkcX/uFv73+uW7YHZy9Lj3ZMW/Yir+JR9U6Hsy45KHin/RDRX9qYFX2xOjXVYx1IMfe6zLf27Tzo2tfm7jlnn3uY0hn9tMJv8A+/ShRapKXKEAAAAASUVORK5CYII=" InformativeScreenshot="3099cbe7fef01deccbb4e2750b2d4ff0.jpg" Selector="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" Title="av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.">
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">GlobalVariablesNamespace.GlobalVariables.HyperlinkMax</CSharpValue>
+            </InArgument>
+          </uix:TargetApp.Url>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

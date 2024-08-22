@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="866.4,5511.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="866.4,5511.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -131,7 +131,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="784,5955.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,1112" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Name" />
       <Variable x:TypeArguments="x:String" Name="Model" />
@@ -143,601 +143,158 @@
       <Variable x:TypeArguments="x:String" Name="PriceMax" />
       <Variable x:TypeArguments="x:String" Name="NameMin" />
       <Variable x:TypeArguments="x:String" Name="PriceMin" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_DataTable" />
+      <Variable x:TypeArguments="x:Double" Name="MinPrice">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">System.Double.MaxValue</CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Double" Default="0" Name="MaxPrice" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="6f2d3ed2-b627-437f-8417-00bb70bd9161" sap:VirtualizedContainerService.HintSize="721.6,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="False">
-      <ufa:ShowFormActivity.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="name">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">Name</CSharpReference>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CarsForm - Invoke Workflow File (CarsForm.xaml)" sap:VirtualizedContainerService.HintSize="353.6,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CarsForm.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="Name">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">Name</CSharpReference>
         </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="model">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">Model</CSharpReference>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
+          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">MaxRow</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
+          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">MinRow</CSharpReference>
+        </InOutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Model">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_56">Model</CSharpReference>
         </OutArgument>
         <OutArgument x:TypeArguments="x:Double" x:Key="PriceFrom">
-          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">PriceFrom</CSharpReference>
+          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_57">PriceFrom</CSharpReference>
         </OutArgument>
         <OutArgument x:TypeArguments="x:Double" x:Key="PriceTo">
-          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">PriceTo</CSharpReference>
+          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_58">PriceTo</CSharpReference>
         </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="NameMax">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">NameMax</CSharpReference>
+        <InOutArgument x:TypeArguments="x:String" x:Key="NameMax">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_59">NameMax</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="PriceMax">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_60">PriceMax</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="NameMin">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_61">NameMin</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="PriceMin">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_62">PriceMin</CSharpReference>
+        </InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353.6,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="FilterData.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="Name">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_97">Name</CSharpValue>
+        </InArgument>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
+          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_83">MaxRow</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
+          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_84">MinRow</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_85">dt_DataTable</CSharpReference>
+        </InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Model">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">Model</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:Double" x:Key="PriceFrom">
+          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_99">PriceFrom</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:Double" x:Key="PriceTo">
+          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">PriceTo</CSharpValue>
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WorkWithExcel - Invoke Workflow File (WorkWithExcel.xaml)" sap:VirtualizedContainerService.HintSize="353.6,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="WorkWithExcel.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
+          <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_101">MaxRow</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
+          <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_102">MinRow</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_103">dt_DataTable</CSharpValue>
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MaxMinSearch - Invoke Workflow File (MaxMinSearch.xaml)" sap:VirtualizedContainerService.HintSize="353.6,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="MaxMinSearch.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
+          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_74">MaxRow</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
+          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_75">MinRow</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_76">dt_DataTable</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:Double" x:Key="MaxPrice">
+          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_77">MaxPrice</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:Double" x:Key="MinPrice">
+          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_78">MinPrice</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="NameMax">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_79">NameMax</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="PriceMax">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_80">PriceMax</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="NameMin">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_81">NameMin</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="PriceMin">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_82">PriceMin</CSharpReference>
+        </InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CarsHyperlinks - Invoke Workflow File (CarsHyperlinks.xaml)" sap:VirtualizedContainerService.HintSize="353.6,197.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="CarsHyperlinks.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="Name">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_86">Name</CSharpReference>
         </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="PriceMax">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">PriceMax</CSharpReference>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
+          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_87">MaxRow</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
+          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_88">MinRow</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_89">dt_DataTable</CSharpReference>
+        </InOutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Model">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_90">Model</CSharpReference>
         </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="HyperlinkMax">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">GlobalVariablesNamespace.GlobalVariables.HyperlinkMax</CSharpReference>
+        <OutArgument x:TypeArguments="x:Double" x:Key="PriceFrom">
+          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_91">PriceFrom</CSharpReference>
         </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="NameMin">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">NameMin</CSharpReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="PriceMin">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">PriceMin</CSharpReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="HyperlinkMin">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">GlobalVariablesNamespace.GlobalVariables.HyperlinkMin</CSharpReference>
-        </OutArgument>
-      </ufa:ShowFormActivity.Arguments>
-    </ufa:ShowFormActivity>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые." sap:VirtualizedContainerService.HintSize="721.6,5308.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,5060" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="sd:DataTable" Name="dt_DataTable" />
-              <Variable x:TypeArguments="x:Double" Name="MinPrice">
-                <Variable.Default>
-                  <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">System.Double.MaxValue</CSharpValue>
-                </Variable.Default>
-              </Variable>
-              <Variable x:TypeArguments="x:Double" Default="0" Name="MaxPrice" />
-              <Variable x:TypeArguments="x:String" Name="ButtonState">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String">^Показать\s.*$</Literal>
-                </Variable.Default>
-              </Variable>
-              <Variable x:TypeArguments="x:Boolean" Name="ButtonIsActive" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Марка'" sap:VirtualizedContainerService.HintSize="625.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://av.by/" CVScreenId="329397e6-6664-4a9c-a29f-9ed8caa18878" CvElementArea="276, 777, 22, 21" CvTextArea="207, 777, 66, 22" CvTextArgument="Mapka" CvType="ArrowButton" DesignTimeRectangle="209, 777, 83, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-2-brand' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-2-brand' tag='SPAN' type='' aaname=' Марка' check:innerText='Марка' /&gt;" Guid="f2770b55-ec04-4640-adb6-157a7a6b8d49" InformativeScreenshot="11405a30c53e7dc33b62eb827ffb2fae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="Label 'Такой марки'" Mode="Disappears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Target>
-                    <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter?brands[0][brand]=6&amp;brands[0][model]=10&amp;price_byn[min]=1000&amp;price_byn[max]=100000&amp;price_currency=1&amp;page=3" DesignTimeRectangle="184, 518, 337, 75" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='dropdown__note' tag='SPAN' type='' aaname='Такой марки сейчас нет или вы сделали ошибку в написании' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown__note' tag='SPAN' type='' aaname='Такой марки сейчас нет или вы сделали ошибку в написании' check:innerText='Такой марки сейчас нет или вы сделали ошибку в написании' /&gt;" Guid="6ff757c8-cd64-4a7e-87be-da374a74a356" ImageBase64="" InformativeScreenshot="192abf5443798e79e9f8e1f250ebecb8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-                  </uix:VerifyExecutionOptions.Target>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="625.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://av.by/" CVScreenId="a19610fc-d15a-43e8-85db-196491570f41" CvTextArea="207, 900, 57, 18" CvTextArgument="NoncK" CvType="Text" DesignTimeRectangle="184, 885, 316, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='dropdown__input' placeholder='Поиск' aaname='' /&gt;" Guid="ff222372-0ca2-4b00-ab7f-a3766adbc6fa" InformativeScreenshot="03e7c0e3ae549e4982fba6185b376645.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">Name + "[k(Enter)]"</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-            </uix:NTypeInto>
-            <uix:NSelectItem DisplayName="Select Item 'Модель'" sap:VirtualizedContainerService.HintSize="625.6,189.6" sap2010:WorkflowViewState.IdRef="NSelectItem_4" ScopeIdentifier="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V3">
-              <uix:NSelectItem.Item>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">Model</CSharpValue>
-                </InArgument>
-              </uix:NSelectItem.Item>
-              <uix:NSelectItem.Items>
-                <scg:List x:TypeArguments="x:String" Capacity="48">
-                  <x:String>Любой</x:String>
-                  <x:String>100</x:String>
-                  <x:String>200</x:String>
-                  <x:String>80</x:String>
-                  <x:String>90</x:String>
-                  <x:String>A1</x:String>
-                  <x:String>A2</x:String>
-                  <x:String>A3</x:String>
-                  <x:String>A4</x:String>
-                  <x:String>A4 Allroad</x:String>
-                  <x:String>A5</x:String>
-                  <x:String>A6</x:String>
-                  <x:String>A6 Allroad</x:String>
-                  <x:String>A7</x:String>
-                  <x:String>A8</x:String>
-                  <x:String>Coupe</x:String>
-                  <x:String>e-tron</x:String>
-                  <x:String>e-tron GT</x:String>
-                  <x:String>e-tron S</x:String>
-                  <x:String>e-tron Sportback</x:String>
-                  <x:String>Q2</x:String>
-                  <x:String>Q3</x:String>
-                  <x:String>Q3 Sportback</x:String>
-                  <x:String>Q4 e-tron</x:String>
-                  <x:String>Q4 e-tron Sportback</x:String>
-                  <x:String>Q5</x:String>
-                  <x:String>Q5 Sportback</x:String>
-                  <x:String>Q7</x:String>
-                  <x:String>Q8</x:String>
-                  <x:String>Q8 e-tron</x:String>
-                  <x:String>R8</x:String>
-                  <x:String>RS e-tron GT</x:String>
-                  <x:String>RS Q8</x:String>
-                  <x:String>RS5</x:String>
-                  <x:String>RS6</x:String>
-                  <x:String>RS7</x:String>
-                  <x:String>S3</x:String>
-                  <x:String>S4</x:String>
-                  <x:String>S5</x:String>
-                  <x:String>S6</x:String>
-                  <x:String>S7</x:String>
-                  <x:String>S8</x:String>
-                  <x:String>SQ5</x:String>
-                  <x:String>SQ7</x:String>
-                  <x:String>SQ8</x:String>
-                  <x:String>TT</x:String>
-                  <x:String>TTS</x:String>
-                  <x:String>V8</x:String>
-                </scg:List>
-              </uix:NSelectItem.Items>
-              <uix:NSelectItem.Target>
-                <uix:TargetAnchorable BrowserURL="https://av.by/" DesignTimeRectangle="579, 590, 97, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-3-model' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-3-model' tag='SPAN' type='' aaname=' Модель' check:innerText='Модель' /&gt;" Guid="3080a9c0-67d0-4866-b45f-83a42ca2e9c6" ImageBase64="" InformativeScreenshot="70fc79b870f8796cd5f17854db513a5b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="561, 571, 377, 55" ElementType="Button" FullSelectorArgument="&lt;webctrl name='p-6-0-3-model' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='p-6-0-3-model' tag='BUTTON' type='button' class='dropdown__control dropdown-floatlabel' aaname='Модель' check:innerText='Модель&amp;#xD;&amp;#xA;Модель' /&gt;" Guid="d9a142ff-3fe6-40bd-86a8-1701dd36b8c3" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NSelectItem.Target>
-            </uix:NSelectItem>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'USD'" sap:VirtualizedContainerService.HintSize="625.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://av.by/" DesignTimeRectangle="861, 854, 58, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-10-price_currency' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-10-price_currency' tag='SPAN' type='' aaname=' USD' check:innerText='USD' /&gt;" Guid="58217dc8-9369-4da6-81c7-f63868927f86" ImageBase64="" InformativeScreenshot="a55ee08364c67b033020a6dd80de8d03.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BYN'" sap:VirtualizedContainerService.HintSize="625.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://av.by/" DesignTimeRectangle="842, 930, 338, 47" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='BYN' class='dropdown__listbutton' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='BYN' class='dropdown__listbutton' tag='BUTTON' type='button' check:innerText='BYN' /&gt;" Guid="724ed187-08ef-4d13-ac9b-81db48c0e2c3" ImageBase64="" InformativeScreenshot="ce5f9dcba3a60c2d2d9c29d1c5b0702d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT p-9-price_usd'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="625.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter" DesignTimeRectangle="579, 549, 85, 27" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='richinput-control__value' aaname='' /&gt;" Guid="beaa2dfc-864b-4880-83ca-d46877e2c229" ImageBase64="" InformativeScreenshot="ab71816f2e38496f43298b1c7221f97d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">PriceFrom.ToString()</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-            </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT p-9-price_usd'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="625.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter" DesignTimeRectangle="720, 549, 85, 27" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl idx='2' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='richinput-control__value' tag='INPUT' type='text' aaname='' /&gt;" Guid="b043a49f-c744-471e-82d0-98db071eae78" ImageBase64="" InformativeScreenshot="08775abc90c3f83b916f415af7a8a390.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">PriceTo.ToString()</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-            </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Показать 205 объявлений'" sap:VirtualizedContainerService.HintSize="625.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://av.by/" DesignTimeRectangle="994, 868, 296, 53" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Показать 353 объявления' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Показать 353 объявления' tag='A' type='' class='button button--secondary button--block' /&gt;" Guid="d9e10dad-cf80-45c8-99d7-eb1ecdb9b826" ImageBase64="" InformativeScreenshot="b694548b009001d0f0b4e664042727e9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                      <uix:Target DesignTimeRectangle="431, 881, 124, 30" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Сбросить' parentid='__next' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Сбросить' parentid='__next' tag='BUTTON' type='button' class='button button--link' check:innerText='Сбросить' /&gt;" Guid="846baec4-f9f2-4a2e-a49d-9691d5e0fb7b" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="625.6,357.6" sap2010:WorkflowViewState.IdRef="TryCatch_5">
-              <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,161.6" sap2010:WorkflowViewState.IdRef="Catch`1_3">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ActivityAction x:TypeArguments="s:Exception">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                    </ActivityAction.Argument>
-                    <Throw sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1">
-                      <InArgument x:TypeArguments="s:Exception">
-                        <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">new Exception("Car is not found")</CSharpValue>
-                      </InArgument>
-                    </Throw>
-                  </ActivityAction>
-                </Catch>
-              </TryCatch.Catches>
-            </TryCatch>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="625.6,352.8" sap2010:WorkflowViewState.IdRef="TryCatch_6">
-              <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,156.8" sap2010:WorkflowViewState.IdRef="Catch`1_4">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ActivityAction x:TypeArguments="s:Exception">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                    </ActivityAction.Argument>
-                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_4">
-                      <ui:MessageBox.Text>
-                        <InArgument x:TypeArguments="x:Object">
-                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">exception.Message</CSharpValue>
-                        </InArgument>
-                      </ui:MessageBox.Text>
-                    </ui:MessageBox>
-                  </ActivityAction>
-                </Catch>
-              </TryCatch.Catches>
-            </TryCatch>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="625.6,219.2" sap2010:WorkflowViewState.IdRef="TryCatch_7">
-              <TryCatch.Try>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ничего не найдено'" sap:VirtualizedContainerService.HintSize="333.6,193.6" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V3">
-                  <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter?brands[0][brand]=6&amp;brands[0][model]=10&amp;price_byn[min]=1000&amp;price_byn[max]=100000&amp;price_currency=1&amp;page=3" DesignTimeRectangle="1056, 633, 234, 53" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='button button--secondary button--block' aaname='Ничего не найдено' check:innerText='Ничего не найдено' /&gt;" Guid="3c61f8df-c271-43d3-8c92-75fa7a317a42" ImageBase64="" InformativeScreenshot="2db76812797396a4b92d2c74cb87773f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-                      <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                          <uix:Target DesignTimeRectangle="1081, 646, 184, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Ничего не найдено' class='button__text' parentid='__next' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Ничего не найдено' class='button__text' parentid='__next' tag='SPAN' type='' check:innerText='Ничего не найдено' /&gt;" Guid="07568d9b-2852-4674-953c-5127d4b3f5a1" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
-                        </scg:List>
-                      </uix:TargetAnchorable.Anchors>
-                    </uix:TargetAnchorable>
-                  </uix:NClick.Target>
-                  <uix:NClick.VerifyOptions>
-                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                      <uix:VerifyExecutionOptions.Retry>
-                        <InArgument x:TypeArguments="x:Boolean" />
-                      </uix:VerifyExecutionOptions.Retry>
-                      <uix:VerifyExecutionOptions.Timeout>
-                        <InArgument x:TypeArguments="x:Double" />
-                      </uix:VerifyExecutionOptions.Timeout>
-                    </uix:VerifyExecutionOptions>
-                  </uix:NClick.VerifyOptions>
-                </uix:NClick>
-              </TryCatch.Try>
-              <TryCatch.Catches>
-                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ActivityAction x:TypeArguments="ui:BusinessRuleException">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
-                    </ActivityAction.Argument>
-                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_3">
-                      <ui:MessageBox.Text>
-                        <InArgument x:TypeArguments="x:Object">
-                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">"The car is not found"</CSharpValue>
-                        </InArgument>
-                      </ui:MessageBox.Text>
-                    </ui:MessageBox>
-                  </ActivityAction>
-                </Catch>
-              </TryCatch.Catches>
-            </TryCatch>
-            <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Link'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Price'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column2' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="625.6,189.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Page" MaximumResults="3" ScopeIdentifier="c1a27b9d-81c1-48d5-898e-6bb8d83bda82" Version="V3">
-              <uix:NExtractData.DataTable>
-                <InOutArgument x:TypeArguments="sd:DataTable">
-                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">dt_DataTable</CSharpReference>
-                </InOutArgument>
-              </uix:NExtractData.DataTable>
-              <uix:NExtractData.NextLink>
-                <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter" CVScreenId="bffa5056-5304-4b52-8cdf-982a944005be" CvElementArea="207, 825, 184, 57" CvTextArea="232, 842, 134, 22" CvTextArgument="Noka3aTb eue" CvType="Button" DesignTimeRectangle="209, 827, 182, 53" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Показать ещё' parentid='__next' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Показать ещё' parentid='__next' tag='A' type='' class='button button--default' check:innerText='Показать ещё' /&gt;" Guid="2e12a6d6-a38c-47db-a9ec-1f3376d3b0c8" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
-              </uix:NExtractData.NextLink>
-              <uix:NExtractData.Target>
-                <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter" DesignTimeRectangle="184, -6725, 1131, 7526" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='listing__items' parentid='__next' tag='DIV' /&gt;" Guid="eb91c3fe-ec96-4daa-9781-3909d2e67f6e" InformativeScreenshot="eec65fcdaca968717b776c62eef79b12.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-              </uix:NExtractData.Target>
-            </uix:NExtractData>
-            <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="625.6,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Output.xlsx">
-              <ui:WriteRange.DataTable>
-                <InArgument x:TypeArguments="sd:DataTable">
-                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">dt_DataTable</CSharpValue>
-                </InArgument>
-              </ui:WriteRange.DataTable>
-            </ui:WriteRange>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="625.6,1859.2" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
-              <ui:ForEachRow.Body>
-                <ActivityAction x:TypeArguments="sd:DataRow">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,1668.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <If sap:VirtualizedContainerService.HintSize="529.6,582.4" sap2010:WorkflowViewState.IdRef="If_5">
-                      <If.Condition>
-                        <InArgument x:TypeArguments="x:Boolean">
-                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">Convert.ToDouble(CurrentRow["Price"].ToString().Replace(" р.", "").Replace(" ", "")) &gt; MaxPrice</CSharpValue>
-                        </InArgument>
-                      </If.Condition>
-                      <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,307.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_7">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Double">
-                                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">MaxPrice</CSharpReference>
-                              </OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Double">
-                                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">Convert.ToDouble(CurrentRow["Price"].ToString().Replace(" р.", "").Replace(" ", ""))</CSharpValue>
-                              </InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_8">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="sd:DataRow">
-                                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">MaxRow</CSharpReference>
-                              </OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="sd:DataRow">
-                                <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">CurrentRow</CSharpValue>
-                              </InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                    <If sap:VirtualizedContainerService.HintSize="529.6,582.4" sap2010:WorkflowViewState.IdRef="If_6">
-                      <If.Condition>
-                        <InArgument x:TypeArguments="x:Boolean">
-                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">Convert.ToDouble(CurrentRow["Price"].ToString().Replace(" р.", "").Replace(" ", "")) &lt; MinPrice</CSharpValue>
-                        </InArgument>
-                      </If.Condition>
-                      <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,307.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_10">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Double">
-                                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">MinPrice</CSharpReference>
-                              </OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Double">
-                                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">Convert.ToDouble(CurrentRow["Price"].ToString().Replace(" р.", "").Replace(" ", ""))</CSharpValue>
-                              </InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_11">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="sd:DataRow">
-                                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">MinRow</CSharpReference>
-                              </OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="sd:DataRow">
-                                <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">CurrentRow</CSharpValue>
-                              </InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="529.6,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-                      <ui:MultipleAssign.AssignOperations>
-                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">NameMax</CSharpReference>
-                              </OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">MaxRow["Name"].ToString()</CSharpValue>
-                              </InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_41">PriceMax</CSharpReference>
-                              </OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">MaxRow["Price"].ToString()</CSharpValue>
-                              </InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_51">GlobalVariablesNamespace.GlobalVariables.HyperlinkMax</CSharpReference>
-                              </OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">MaxRow["Link"].ToString()</CSharpValue>
-                              </InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                        </scg:List>
-                      </ui:MultipleAssign.AssignOperations>
-                    </ui:MultipleAssign>
-                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="529.6,203.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
-                      <ui:MultipleAssign.AssignOperations>
-                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_46">NameMin</CSharpReference>
-                              </OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">MinRow["Name"].ToString()</CSharpValue>
-                              </InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_47">PriceMin</CSharpReference>
-                              </OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">MinRow["Price"].ToString()</CSharpValue>
-                              </InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">GlobalVariablesNamespace.GlobalVariables.HyperlinkMin</CSharpReference>
-                              </OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">MinRow["Link"].ToString()</CSharpValue>
-                              </InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                        </scg:List>
-                      </ui:MultipleAssign.AssignOperations>
-                    </ui:MultipleAssign>
-                  </Sequence>
-                </ActivityAction>
-              </ui:ForEachRow.Body>
-              <ui:ForEachRow.DataTable>
-                <InArgument x:TypeArguments="sd:DataTable">
-                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">dt_DataTable</CSharpValue>
-                </InArgument>
-              </ui:ForEachRow.DataTable>
-            </ui:ForEachRow>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAL6SURBVGhD1ZpPitRAFMZ7KTg2XkDwAC48wqy9gTeYG3iDTutGN+oFZty5ctwJLsadi8F2p0jRuNBhkLQMMooMsb6aFHQ/vqp6lcTp1Ac/aJJ6Ve9L/Us6mTDtVGZ3OvvyZFqZ4+ncGEttaa4YtGluzM1b5LJTfd5t0wvrZmVuuwBe4Rgw12yObbqbuv7I3LUFtnGlc6mRa5v2pXDlcUIUHDP1Rk/YAxjnrOBowVB3ybsJSwqUgJvY07ldbcjJIrCr02Tkq06ch+a4yPG/hoGBQVafW4+Xzd7haXOwOGsWJ3+a1flF44XfOIZzKIOyrI4O1DDATqi58/xr8+z9z42ENYIZxLI6c+hloDqqsxOXQh2sbi2dDODKYUgMJdTVtTeyDaCh5epv2/RwQp1dTGQb+B/Je6Encid4lgFMVo0wL/btJJ3Z8Q1effqlNo42WNsh1AbQvSkhyXsvvtF4sPf6VGUkVodEbQDLXkz7H8/U3Z+q62h5TuMYKgOpq48hwuJiIMmYtBdDZQC7Z0gY711WD8TE9pAHb37QOInKwKG9wiFhsrIYDU8ji4K2V1UGFt/Dm1bOhJMgNiRMdhYjURmIiZXXgnEeE4uRbNUAiImVl/Q20PfWOCZWXqIyENt8es2Bg/AcgFiMRGUgtgrhVoHFaEhtaCxGojKANTmk1e+LTsMI+0DqtoLFSVQGUqsFeojFxYj1qheLk6gMgNTWj+HA4hipoePFYiVqA7FNx8vdjdqJyeIBzuU8ybE6JGoDILb1rwtGcJX98wB+p8Y7E8tBkmUAcyF2WzG0WA6SLANAs3oMJda+JNsAuCoTrG1JJwOe2bu6baqbUv8psTYlvQwA9AaeCXKExGEecyr2nMzak/Q24IERJIMHkQ9ioiNhHINRlGE79/2XJ+7cOrIMAwZKerUkcX/uFv73+uW7YHZy9Lj3ZMW/Yir+JR9U6Hsy45KHin/RDRX9qYFX2xOjXVYx1IMfe6zLf27Tzo2tfm7jlnn3uY0hn9tMJv8A+/ShRapKXKEAAAAASUVORK5CYII=" InformativeScreenshot="e276ffa5f164d141c3f6bb4dd779c8ba.jpg" Selector="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" Title="av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые." Url="https://av.by/" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="2471d772-554c-4a1c-bb6e-b8eb9d18c6bc" sap:VirtualizedContainerService.HintSize="721.6,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_3" IsAsync="True">
-      <ufa:ShowFormActivity.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="name">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">Name</CSharpReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="model">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">Model</CSharpReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:Double" x:Key="priceFrom">
-          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">PriceFrom</CSharpReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:Double" x:Key="priceTo">
-          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">PriceTo</CSharpReference>
+        <OutArgument x:TypeArguments="x:Double" x:Key="PriceTo">
+          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_92">PriceTo</CSharpReference>
         </OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="NameMax">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">NameMax</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_104">NameMax</CSharpValue>
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="PriceMax">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">PriceMax</CSharpValue>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="HyperlinkMax">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">GlobalVariablesNamespace.GlobalVariables.HyperlinkMax</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_105">PriceMax</CSharpValue>
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="NameMin">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">NameMin</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">NameMin</CSharpValue>
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="PriceMin">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">PriceMin</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">PriceMin</CSharpValue>
         </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="HyperlinkMin">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">GlobalVariablesNamespace.GlobalVariables.HyperlinkMin</CSharpValue>
-        </InArgument>
-      </ufa:ShowFormActivity.Arguments>
-    </ufa:ShowFormActivity>
-    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="721.6,119.2" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
-      <ui:StartTriggers.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:StartTriggers.Arguments>
-    </ui:StartTriggers>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
