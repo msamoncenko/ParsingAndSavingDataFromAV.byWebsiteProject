@@ -1,0 +1,67 @@
+﻿{
+  "Metadata": {
+    "Id": "2471d772-554c-4a1c-bb6e-b8eb9d18c6bc",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Result",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Name of the car with the highest price",
+        "tableView": true,
+        "key": "NameMax",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "label": "Price of the car with the highest price",
+        "tableView": true,
+        "key": "PriceMax",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "label": "Hyperlink of the car with the highest price",
+        "tableView": true,
+        "key": "HyperlinkMax",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "label": "Name of the car with the lowest price",
+        "tableView": true,
+        "key": "NameMin",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "label": "Price of the car with the lowest price",
+        "tableView": true,
+        "key": "PriceMin",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "label": "Hyperlink of the car with the lowest price",
+        "tableView": true,
+        "key": "HyperlinkMin",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+﻿{
+  "Metadata": {
+    "Id": "6f2d3ed2-b627-437f-8417-00bb70bd9161",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Cars",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Name",
+        "tableView": true,
+        "key": "name",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "label": "Model",
+        "tableView": true,
+        "key": "model",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "label": "Price From",
+        "tableView": true,
+        "key": "priceFrom",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "label": "Price To",
+        "tableView": true,
+        "key": "priceTo",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}
