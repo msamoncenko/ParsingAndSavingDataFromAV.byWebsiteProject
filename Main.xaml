@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="866.4,5511.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="866.4,1489.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -131,170 +131,236 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,1112" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="496,489.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="Name" />
-      <Variable x:TypeArguments="x:String" Name="Model" />
-      <Variable x:TypeArguments="x:Double" Name="PriceFrom" />
-      <Variable x:TypeArguments="x:Double" Name="PriceTo" />
-      <Variable x:TypeArguments="sd:DataRow" Name="MaxRow" />
-      <Variable x:TypeArguments="sd:DataRow" Name="MinRow" />
-      <Variable x:TypeArguments="x:String" Name="NameMax" />
-      <Variable x:TypeArguments="x:String" Name="PriceMax" />
-      <Variable x:TypeArguments="x:String" Name="NameMin" />
-      <Variable x:TypeArguments="x:String" Name="PriceMin" />
+      <Variable x:TypeArguments="x:String" Name="out_Name" />
+      <Variable x:TypeArguments="x:String" Name="out_Model" />
+      <Variable x:TypeArguments="x:Double" Name="out_PriceFrom" />
+      <Variable x:TypeArguments="x:Double" Name="out_PriceTo" />
+      <Variable x:TypeArguments="sd:DataRow" Name="out_MaxRow" />
+      <Variable x:TypeArguments="sd:DataRow" Name="out_MinRow" />
+      <Variable x:TypeArguments="x:String" Name="out_NameMax" />
+      <Variable x:TypeArguments="x:String" Name="out_PriceMax" />
+      <Variable x:TypeArguments="x:String" Name="out_NameMin" />
+      <Variable x:TypeArguments="x:String" Name="out_PriceMin" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_DataTable" />
-      <Variable x:TypeArguments="x:Double" Name="MinPrice">
+      <Variable x:TypeArguments="x:Double" Name="out_MinPrice">
         <Variable.Default>
           <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">System.Double.MaxValue</CSharpValue>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="x:Double" Default="0" Name="MaxPrice" />
+      <Variable x:TypeArguments="x:Double" Default="0" Name="out_MaxPrice" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CarsForm - Invoke Workflow File (CarsForm.xaml)" sap:VirtualizedContainerService.HintSize="353.6,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CarsForm.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ShowForm - Invoke Workflow File (ShowForm.xaml)" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ShowForm.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="Name">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">Name</CSharpReference>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Name">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_107">out_Name</CSharpReference>
         </OutArgument>
-        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
-          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">MaxRow</CSharpReference>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="out_MaxRow">
+          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_108">out_MaxRow</CSharpReference>
         </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
-          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">MinRow</CSharpReference>
-        </InOutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Model">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_56">Model</CSharpReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:Double" x:Key="PriceFrom">
-          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_57">PriceFrom</CSharpReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:Double" x:Key="PriceTo">
-          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_58">PriceTo</CSharpReference>
-        </OutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="NameMax">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_59">NameMax</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="PriceMax">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_60">PriceMax</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="NameMin">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_61">NameMin</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="PriceMin">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_62">PriceMin</CSharpReference>
-        </InOutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353.6,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="FilterData.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="Name">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_97">Name</CSharpValue>
-        </InArgument>
-        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
-          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_83">MaxRow</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
-          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_84">MinRow</CSharpReference>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="out_MinRow">
+          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_109">out_MinRow</CSharpReference>
         </InOutArgument>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_85">dt_DataTable</CSharpReference>
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_110">dt_DataTable</CSharpReference>
         </InOutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Model">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">Model</CSharpValue>
-        </InArgument>
-        <InArgument x:TypeArguments="x:Double" x:Key="PriceFrom">
-          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_99">PriceFrom</CSharpValue>
-        </InArgument>
-        <InArgument x:TypeArguments="x:Double" x:Key="PriceTo">
-          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">PriceTo</CSharpValue>
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WorkWithExcel - Invoke Workflow File (WorkWithExcel.xaml)" sap:VirtualizedContainerService.HintSize="353.6,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="WorkWithExcel.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
-          <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_101">MaxRow</CSharpValue>
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
-          <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_102">MinRow</CSharpValue>
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
-          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_103">dt_DataTable</CSharpValue>
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MaxMinSearch - Invoke Workflow File (MaxMinSearch.xaml)" sap:VirtualizedContainerService.HintSize="353.6,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="MaxMinSearch.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
-          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_74">MaxRow</CSharpReference>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Model">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_111">out_Model</CSharpReference>
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Double" x:Key="out_PriceFrom">
+          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_112">out_PriceFrom</CSharpReference>
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Double" x:Key="out_PriceTo">
+          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_113">out_PriceTo</CSharpReference>
+        </OutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="out_NameMax">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_114">out_NameMax</CSharpReference>
         </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
-          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_75">MinRow</CSharpReference>
+        <InOutArgument x:TypeArguments="x:String" x:Key="out_PriceMax">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_115">out_PriceMax</CSharpReference>
         </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_76">dt_DataTable</CSharpReference>
+        <InOutArgument x:TypeArguments="x:String" x:Key="out_NameMin">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_116">out_NameMin</CSharpReference>
         </InOutArgument>
-        <InOutArgument x:TypeArguments="x:Double" x:Key="MaxPrice">
-          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_77">MaxPrice</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:Double" x:Key="MinPrice">
-          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_78">MinPrice</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="NameMax">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_79">NameMax</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="PriceMax">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_80">PriceMax</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="NameMin">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_81">NameMin</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="PriceMin">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_82">PriceMin</CSharpReference>
+        <InOutArgument x:TypeArguments="x:String" x:Key="out_PriceMin">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_117">out_PriceMin</CSharpReference>
         </InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CarsHyperlinks - Invoke Workflow File (CarsHyperlinks.xaml)" sap:VirtualizedContainerService.HintSize="353.6,197.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="CarsHyperlinks.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="Name">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_86">Name</CSharpReference>
-        </OutArgument>
-        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
-          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_87">MaxRow</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
-          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_88">MinRow</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_89">dt_DataTable</CSharpReference>
-        </InOutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Model">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_90">Model</CSharpReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:Double" x:Key="PriceFrom">
-          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_91">PriceFrom</CSharpReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:Double" x:Key="PriceTo">
-          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_92">PriceTo</CSharpReference>
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="NameMax">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_104">NameMax</CSharpValue>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="PriceMax">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_105">PriceMax</CSharpValue>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="NameMin">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">NameMin</CSharpValue>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="PriceMin">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">PriceMin</CSharpValue>
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,344" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="416,307.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FilterData - Invoke Workflow File (FilterData.xaml)" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="FilterData.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="Name">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_97">out_Name</CSharpValue>
+              </InArgument>
+              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
+                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_83">out_MaxRow</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
+                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_84">out_MinRow</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
+                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_85">dt_DataTable</CSharpReference>
+              </InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Model">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">out_Model</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="PriceFrom">
+                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_99">out_PriceFrom</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="PriceTo">
+                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">out_PriceTo</CSharpValue>
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WorkWithExcel - Invoke Workflow File (WorkWithExcel.xaml)" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="WorkWithExcel.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
+                <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_101">out_MaxRow</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
+                <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_102">out_MinRow</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
+                <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_103">dt_DataTable</CSharpValue>
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MaxMinSearch - Invoke Workflow File (MaxMinSearch.xaml)" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="MaxMinSearch.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
+                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_74">out_MaxRow</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
+                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_75">out_MinRow</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
+                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_76">dt_DataTable</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="x:Double" x:Key="MaxPrice">
+                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_77">out_MaxPrice</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="x:Double" x:Key="MinPrice">
+                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_78">out_MinPrice</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="NameMax">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_79">out_NameMax</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="PriceMax">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_80">out_PriceMax</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="NameMin">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_81">out_NameMin</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="PriceMin">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_82">out_PriceMin</CSharpReference>
+              </InOutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CarsHyperlinks - Invoke Workflow File (CarsHyperlinks.xaml)" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="CarsHyperlinks.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="x:String" x:Key="Name">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_86">out_Name</CSharpReference>
+              </OutArgument>
+              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MaxRow">
+                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_87">out_MaxRow</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="MinRow">
+                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_88">out_MinRow</CSharpReference>
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_DataTable">
+                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_89">dt_DataTable</CSharpReference>
+              </InOutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="Model">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_90">out_Model</CSharpReference>
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:Double" x:Key="PriceFrom">
+                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_91">out_PriceFrom</CSharpReference>
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:Double" x:Key="PriceTo">
+                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_92">out_PriceTo</CSharpReference>
+              </OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="NameMax">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_104">out_NameMax</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="PriceMax">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_105">out_PriceMax</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="NameMin">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">out_NameMin</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="PriceMin">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">out_PriceMin</CSharpValue>
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,156.8" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+              <ui:MessageBox.Text>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_108">"The execution of the porgram was failed.The proccess will stop."</CSharpValue>
+                </InArgument>
+              </ui:MessageBox.Text>
+            </ui:MessageBox>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
   </Sequence>
 </Activity>

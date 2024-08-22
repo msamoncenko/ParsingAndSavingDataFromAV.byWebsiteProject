@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome av.by — купить, продать авто в Беларус",
+  "Type": "Screen",
+  "Id": "UhDQ2xcIZ0yqEr1icvyP6Q",
+  "Reference": "lttuo1jdGEuKy62gMIja-w/UhDQ2xcIZ0yqEr1icvyP6Q",
+  "ParentRef": "lttuo1jdGEuKy62gMIja-w/tOhW3ASP_0-ViX6QLOnrlQ",
+  "Created": "2024-08-22T19:49:45.7330404Z",
+  "Updated": "2024-08-22T19:49:45.7330404Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
