@@ -29,14 +29,14 @@
       {
         "label": "Price From",
         "tableView": true,
-        "key": "priceFrom",
+        "key": "PriceFrom",
         "type": "textarea",
         "input": true
       },
       {
         "label": "Price To",
         "tableView": true,
-        "key": "priceTo",
+        "key": "PriceTo",
         "type": "textarea",
         "input": true
       },
