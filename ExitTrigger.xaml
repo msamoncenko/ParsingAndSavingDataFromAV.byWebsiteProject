@@ -75,7 +75,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.exit" FormId="2471d772-554c-4a1c-bb6e-b8eb9d18c6bc" sap:VirtualizedContainerService.HintSize="353.6,194.4" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="03b59900-6a92-4d6a-bb3d-c646c5c8a8bb" />
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger 'Exit'" Enabled="True" Event="click.exit" FormId="2471d772-554c-4a1c-bb6e-b8eb9d18c6bc" sap:VirtualizedContainerService.HintSize="353.6,194.4" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="03b59900-6a92-4d6a-bb3d-c646c5c8a8bb" />
     <ui:StopTriggers DisplayName="Stop Local Triggers" sap:VirtualizedContainerService.HintSize="353.6,119.2" sap2010:WorkflowViewState.IdRef="StopTriggers_1">
       <ui:StopTriggers.ShouldStop>
         <OutArgument x:TypeArguments="x:Boolean">

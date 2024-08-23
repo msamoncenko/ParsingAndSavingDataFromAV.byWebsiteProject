@@ -11,6 +11,7 @@
     <x:Property Name="PriceMin" Type="InOutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>866.4,2042.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -132,13 +133,14 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_32">
+  <Sequence sap2010:Annotation.AnnotationText="This process checks all rows of the table to find the minimum and maximum price values ​​and stores the values ​​in variables" DisplayName="Main sequence for finding cars with min and max price" sap:VirtualizedContainerService.HintSize="688,1977.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="640,1866.4" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table 'Output'" sap:VirtualizedContainerService.HintSize="625.6,1857.6" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -150,7 +152,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If sap:VirtualizedContainerService.HintSize="529.6,582.4" sap2010:WorkflowViewState.IdRef="If_11">
+            <If DisplayName="If current price value is bigger than current maximum value" sap:VirtualizedContainerService.HintSize="529.6,582.4" sap2010:WorkflowViewState.IdRef="If_11">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85">Convert.ToDouble(CurrentRow["Price"].ToString().Replace(" р.", "").Replace(" ", "")) &gt; MaxPrice</CSharpValue>
@@ -163,7 +165,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_12">
+                  <Assign DisplayName="Assign new MaxPrice value" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_12">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Double">
                         <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_64">MaxPrice</CSharpReference>
@@ -175,7 +177,7 @@
                       </InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_13">
+                  <Assign DisplayName="Assign new Row with highest price" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_13">
                     <Assign.To>
                       <OutArgument x:TypeArguments="sd:DataRow">
                         <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_65">MaxRow</CSharpReference>
@@ -199,7 +201,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If sap:VirtualizedContainerService.HintSize="529.6,582.4" sap2010:WorkflowViewState.IdRef="If_12">
+            <If DisplayName="If current price value is smaller than current minimum value" sap:VirtualizedContainerService.HintSize="529.6,582.4" sap2010:WorkflowViewState.IdRef="If_12">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_88">Convert.ToDouble(CurrentRow["Price"].ToString().Replace(" р.", "").Replace(" ", "")) &lt; MinPrice</CSharpValue>
@@ -212,7 +214,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_14">
+                  <Assign DisplayName="Assign new MinPrice value" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_14">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Double">
                         <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_66">MinPrice</CSharpReference>
@@ -224,7 +226,7 @@
                       </InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_15">
+                  <Assign DisplayName="Assign new row with the lowest price" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_15">
                     <Assign.To>
                       <OutArgument x:TypeArguments="sd:DataRow">
                         <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_67">MinRow</CSharpReference>
@@ -248,7 +250,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="529.6,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+            <ui:MultipleAssign DisplayName="Multiple Assign for getting result maximum values" sap:VirtualizedContainerService.HintSize="529.6,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
@@ -290,7 +292,7 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="529.6,203.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+            <ui:MultipleAssign DisplayName="Multiple Assign for getting result minimum values" sap:VirtualizedContainerService.HintSize="529.6,203.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">

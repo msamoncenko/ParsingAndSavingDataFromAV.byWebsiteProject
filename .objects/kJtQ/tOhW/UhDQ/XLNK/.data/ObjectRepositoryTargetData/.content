@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="YAH8SAqFDUOcBGsghP3qDQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="iOAT40z1Z0mFDL1e7C-FNQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
     <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://cars.av.by/filter?brands[0][brand]=6&amp;brands[0][model]=10&amp;price_byn[min]=1000&amp;price_byn[max]=100000&amp;price_currency=1&amp;page=3" DesignTimeRectangle="184, 518, 337, 75" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='dropdown__note' tag='SPAN' type='' aaname='Такой марки сейчас нет или вы сделали ошибку в написании' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown__note' tag='SPAN' type='' aaname='Такой марки сейчас нет или вы сделали ошибку в написании' check:innerText='Такой марки сейчас нет или вы сделали ошибку в написании' /&gt;" Guid="6ff757c8-cd64-4a7e-87be-da374a74a356" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="192abf5443798e79e9f8e1f250ebecb8.png" xmlns="">0uqVkRAzJw0yiFsqk1FZDNw</imageRef>
+      <imageRef attrName="InformativeScreenshot" originalValue="192abf5443798e79e9f8e1f250ebecb8.png" xmlns="">0ve4bWn4BJk--UyZQ1oSiuw</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>

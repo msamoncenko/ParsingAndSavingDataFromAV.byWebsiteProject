@@ -120,13 +120,14 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="416,427.2" sap2010:WorkflowViewState.IdRef="Sequence_33">
+  <Sequence sap2010:Annotation.AnnotationText="This process displays a form with information about cars with a maximum and minimum price with clickable hyperlinks" DisplayName="Sequence for showing form with the hyperlinks" sap:VirtualizedContainerService.HintSize="416,471.2" sap2010:WorkflowViewState.IdRef="Sequence_33">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="2471d772-554c-4a1c-bb6e-b8eb9d18c6bc" sap:VirtualizedContainerService.HintSize="353.6,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_3" IsAsync="True">
+    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form with hyperlinks" FormId="2471d772-554c-4a1c-bb6e-b8eb9d18c6bc" sap:VirtualizedContainerService.HintSize="353.6,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_3" IsAsync="True">
       <ufa:ShowFormActivity.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="name">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">Name</CSharpReference>
